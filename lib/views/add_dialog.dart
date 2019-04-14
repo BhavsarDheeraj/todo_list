@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:todo_list/view_model.dart';
+import 'package:todo_list/model/view_model.dart';
 
 class AddDialog extends StatefulWidget {
   final ViewModel model;

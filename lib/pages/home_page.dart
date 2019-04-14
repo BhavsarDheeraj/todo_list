@@ -7,7 +7,7 @@ import 'package:flutter_redux_dev_tools/flutter_redux_dev_tools.dart';
 import 'package:todo_list/model/app_state.dart';
 
 import 'package:todo_list/views/add_dialog.dart';
-import 'package:todo_list/view_model.dart';
+import 'package:todo_list/model/view_model.dart';
 import 'package:todo_list/views/todo_list.dart';
 
 class HomePage extends StatelessWidget {
