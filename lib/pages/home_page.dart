@@ -61,7 +61,11 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('ToDo List'),
       ),
-      body: ListView.builder(
+      body: ListView.separated(
+        separatorBuilder: (context, index) => Divider(
+              color: Colors.grey,
+              height: 0.5,
+            ),
         itemCount: 3,
         itemBuilder: (BuildContext context, int index) {
           return Dismissible(
