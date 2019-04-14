@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/view_model.dart';
 
-class AddDialog extends StatelessWidget {
+class AddDialog extends StatefulWidget {
+  final ViewModel model;
+
+  AddDialog(this.model);
+
+  @override
+  _AddDialogState createState() => _AddDialogState();
+}
+
+class _AddDialogState extends State<AddDialog> {
+  final TextEditingController controller = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('What ToDo?'),
+      title: Text('Add a Todo...'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           TextField(
+            maxLength: 20,
+            controller: controller,
             autofocus: true,
             decoration: InputDecoration(
-                labelText: 'Title', hintText: 'eg. Feed tommy.'),
+                labelText: 'Todo', hintText: 'eg. Feed tommy.'),
           ),
-          TextField(
-            decoration: InputDecoration(
-                labelText: 'Subtitle', hintText: 'eg. After 5 pm.'),
-          )
         ],
       ),
       actions: <Widget>[
@@ -29,10 +39,17 @@ class AddDialog extends StatelessWidget {
         FlatButton(
           child: Text('CREATE'),
           onPressed: () {
+            _onCreateTap();
             Navigator.pop(context);
           },
         ),
       ],
     );
+  }
+
+  _onCreateTap() {
+    if (controller.text != null && controller.text.isNotEmpty) {
+      widget.model.onAddItem(controller.text);
+    }
   }
 }
