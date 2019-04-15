@@ -26,6 +26,7 @@ dependencies:
   flutter_redux:
   shared_preferences:
   flutter_redux_dev_tools:
+  http: any
 
 dev_dependencies:
   flutter_test:

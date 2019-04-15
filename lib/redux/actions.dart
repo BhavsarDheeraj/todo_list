@@ -28,6 +28,8 @@ class LoadedItemsAction {
   LoadedItemsAction(this.items);
 }
 
+class LoadingItemsAction {}
+
 class ItemCompletedAction {
   final Item item;
 
