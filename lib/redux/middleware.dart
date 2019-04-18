@@ -37,6 +37,7 @@ Middleware<AppState> _saveToPrefs(AppState state) {
     saveToPrefs(store.state);
   };
 }
+
 Middleware<AppState> _getAllNotes(AppState state) {
   return (Store<AppState> store, action, NextDispatcher next) {
     next(action);
