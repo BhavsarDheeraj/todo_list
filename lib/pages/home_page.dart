@@ -31,13 +31,9 @@ class HomePage extends StatelessWidget {
           RemoveItemsButton(ViewModel.create(store)),
         ],
       ),
-      // body: ToDoList(),
       body: StoreConnector<AppState, ViewModel>(
           converter: (Store<AppState> store) => ViewModel.create(store),
           builder: (BuildContext context, ViewModel viewModel) {
-            if (viewModel.items == null) {
-              return Center(child: Text('Loading'),);
-            }
             return ToDoList(viewModel);
           }),
       drawer: Container(
