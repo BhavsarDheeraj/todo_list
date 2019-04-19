@@ -11,6 +11,7 @@ Reducer<List<Item>> itemReducer = combineReducers<List<Item>>([
   TypedReducer<List<Item>, AddItemAction>(addItemReducer),
   TypedReducer<List<Item>, RemoveItemAction>(removeItemReducer),
   TypedReducer<List<Item>, RemoveItemsAction>(removeItemsReducer),
+  TypedReducer<List<Item>, LoadingItemsAction>(loadingItemsReducer),
   TypedReducer<List<Item>, LoadedItemsAction>(loadedItemsReducer),
   TypedReducer<List<Item>, ItemCompletedAction>(itemCompletedReducer),
 ]);
@@ -31,6 +32,10 @@ List<Item> removeItemsReducer(List<Item> items, RemoveItemsAction action) {
 
 List<Item> loadedItemsReducer(List<Item> items, LoadedItemsAction action) {
   return action.items;
+}
+
+List<Item> loadingItemsReducer(List<Item> items, LoadingItemsAction action) {
+  return items;
 }
 
 List<Item> itemCompletedReducer(List<Item> items, ItemCompletedAction action) {
